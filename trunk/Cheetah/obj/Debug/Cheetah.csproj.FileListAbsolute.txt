@@ -1,0 +1,25 @@
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\obj\Debug\Cheetah.csprojResolveAssemblyReference.cache
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\obj\Debug\Cheetah.Form1.resources
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\obj\Debug\Cheetah.Properties.Resources.resources
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\obj\Debug\Cheetah.csproj.GenerateResource.Cache
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\bin\Debug\Cheetah.exe
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\bin\Debug\Cheetah.pdb
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\bin\Debug\ChromiumEngine.dll
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\obj\Debug\Cheetah.exe
+C:\Users\Fujitsu\AppData\Local\Temporary Projects\Cheetah\obj\Debug\Cheetah.pdb
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.exe
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.pdb
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Cheetah.exe
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Cheetah.pdb
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\ChromiumEngine.dll
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.Form1.resources
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.Properties.Resources.resources
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.MetroToolkit.LabelButton.resources
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.MetroToolkit.MetroButton.resources
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.MetroToolkit.MetroButtons.resources
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\Cheetah.MetroToolkit.NoteButton.resources
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Qios.DevSuite.Components.dll
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Transitions.dll
+D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Cheetah.exe.config
