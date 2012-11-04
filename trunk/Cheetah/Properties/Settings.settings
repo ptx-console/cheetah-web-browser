@@ -5,14 +5,216 @@
     <Setting Name="UseAero" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="SearchEngine" Type="System.String" Scope="User">
+    <Setting Name="ShowNavBar" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Homepage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://gt-web-software.webs.com/</Value>
+    </Setting>
+    <Setting Name="checkForUpdatesOnStart" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="startpage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Open default</Value>
+    </Setting>
+    <Setting Name="customstartpage" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BlockedWebsites" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;string&gt;www.redtube.com&lt;/string&gt;
+        &lt;string&gt;www.playboy.com&lt;/string&gt;
+        &lt;string&gt;www.coedcherry.com&lt;/string&gt;
+        &lt;string&gt;www.tokyoteenis.com&lt;/string&gt;
+        &lt;string&gt;www.crocoporn.com&lt;/string&gt;
+        &lt;string&gt;www.semprot.com&lt;/string&gt;
+        &lt;string&gt;www.ideal-teens.com&lt;/string&gt;
+        &lt;string&gt;www.japanwhore.com&lt;/string&gt;
+        &lt;string&gt;www.sukatoro.com&lt;/string&gt;
+        &lt;string&gt;www.karupshax.com&lt;/string&gt;
+        &lt;string&gt;www.perfectasianpussy.com&lt;/string&gt;
+        &lt;string&gt;www.nippon-idols.com&lt;/string&gt;
+        &lt;string&gt;www.69idols.com&lt;/string&gt;
+        &lt;string&gt;www.150teengalleries.com&lt;/string&gt;
+        &lt;string&gt;www.digitaldesire.com&lt;/string&gt;
+        &lt;string&gt;www.ceritasex.cn&lt;/string&gt;
+        &lt;string&gt;www.tiava.com&lt;/string&gt;
+        &lt;string&gt;www.xnxx.com&lt;/string&gt;
+        &lt;/ArrayOfString&gt;
+      </Value>
+    </Setting>
+    <Setting Name="BlockPopup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DontShowWarningBox" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="deletecookies" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="browsermode" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="loadimage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="usejavascript" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="usecache" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="allowplugins" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="allowcookies" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="sourceallignment" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sourcewidth" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sourcethickness" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sourceshadding" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sourcecolor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="sourcepercentorpixel" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Bookmark" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;string /&gt;
+        &lt;/ArrayOfString&gt;
+      </Value>
+    </Setting>
+    <Setting Name="NewTab" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Open Praken Home</Value>
     </Setting>
     <Setting Name="CustomNewTab" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="NewTab" Type="System.String" Scope="User">
+    <Setting Name="deletecache" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VisPanel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AskDownloadLoc" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Downloadloc" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SearchEngine" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Google</Value>
+    </Setting>
+    <Setting Name="BlockAdv" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="DeleteBookmark" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DeleteHistory" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowFull" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SecurityLevel" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="PopupOpenInWindow" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AdsFilter" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;string&gt;show_ads.js&lt;/string&gt;
+        &lt;string&gt;ads.sittiad&lt;/string&gt;
+        &lt;string&gt;ads.clicksor&lt;/string&gt;
+        &lt;string&gt;.kliksaya.com&lt;/string&gt;
+        &lt;string&gt;adsensecamp&lt;/string&gt;
+        &lt;string&gt;ads.ad4game&lt;/string&gt;
+        &lt;string&gt;pagead2.&lt;/string&gt;
+        &lt;string&gt;googleadservices&lt;/string&gt;
+        &lt;string&gt;ads.lycos.com&lt;/string&gt;
+        &lt;string&gt;ad-emea&lt;/string&gt;
+        &lt;string&gt;adbanner&lt;/string&gt;
+        &lt;string&gt;scripts.lycos.com&lt;/string&gt;
+        &lt;string&gt;/ad/&lt;/string&gt;
+        &lt;string&gt;ad.yieldmanager&lt;/string&gt;
+        &lt;string&gt;googleads&lt;/string&gt;
+        &lt;/ArrayOfString&gt;
+      </Value>
+    </Setting>
+    <Setting Name="PopupException" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="newtabaction" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="newtabcustompage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="smoothscrolling" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="custompluginspath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="allowinsecure" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="javascriptclipboard" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="javascriptwindows" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="webgl" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="webaudio" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="websecurity" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CustomContext" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Useragent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.6 (KHTML, like Gecko) Cheetah/1.0.0.0 Chrome/20.0.1092.0 Safari/536.6</Value>
+    </Setting>
+    <Setting Name="defaultua" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Cheetah</Value>
+    </Setting>
+    <Setting Name="Encoding" Type="System.String" Scope="User">
+      <Value Profile="(Default)">iso-8859-1</Value>
+    </Setting>
+    <Setting Name="SavePassLogin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PassLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DownloadsFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{default}</Value>
     </Setting>
   </Settings>
 </SettingsFile>

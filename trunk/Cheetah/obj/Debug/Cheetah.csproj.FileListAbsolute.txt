@@ -23,3 +23,31 @@ D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\obj\Debug\
 D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Qios.DevSuite.Components.dll
 D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Transitions.dll
 D:\Documents\Visual Studio 11\Projects\Tugas Komputer\Cheetah\Cheetah\bin\Debug\Cheetah.exe.config
+C:\cheetah chromium\Cheetah\bin\Debug\Cheetah.exe.config
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.exe
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.pdb
+C:\cheetah chromium\Cheetah\bin\Debug\Cheetah.exe
+C:\cheetah chromium\Cheetah\bin\Debug\Cheetah.pdb
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.csprojResolveAssemblyReference.cache
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Form1.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.MetroToolkit.LabelButton.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.MetroToolkit.MetroButton.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.MetroToolkit.MetroButtons.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.MetroToolkit.NoteButton.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Properties.Resources.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.csproj.GenerateResource.Cache
+C:\cheetah chromium\Cheetah\bin\Debug\ChromiumEngine.dll
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.AboutCheetah.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.CheetahLogin.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.CheetahSettings.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.CloseDialog.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.InfoWeb.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.Library.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.MessageCheetah.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.SendReport.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Forms.ViewSource.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.CheetahMessage.resources
+C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.FastColoredTextBox.resources
+C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.FindForm.resources
+C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.ReplaceForm.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.UpdaterC.resources

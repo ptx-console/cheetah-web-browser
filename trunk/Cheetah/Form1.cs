@@ -42,10 +42,7 @@ namespace Cheetah
                 InitializeComponent();
                 TabC.BackColor = Color.FromArgb(235, 232, 215);
             }
-
-            WebPreferences prefs = new WebPreferences();
-            prefs.UniversalAccessFromFileUrlsAllowed = false;
-            wb.InitializeEngine(prefs, "http://www.google.com/");
+            
         }
         #region Extend Frame
         #region Constants
@@ -1017,7 +1014,7 @@ namespace Cheetah
 
         public void DuplicateTab(QTabPage Tab)
         {
-            WebDisplay current = wb;
+            WebDisplay current = Browser;
             WebDisplay nextweb = (WebDisplay)Tab.Controls[0];//Controls(0);
             QTabPage Tabs = new QTabPage();
             string s = nextweb.Url.ToString().Replace(" ", "%20");
@@ -1259,24 +1256,29 @@ namespace Cheetah
             return (Uri.IsWellFormedUriString(text, UriKind.RelativeOrAbsolute));
         }
 
-        public void AddTab(string u = "", WebDisplay view = null)
+        public void AddTab(string u = "")
         { 
             QTabPage tbp = new QTabPage();
             tbp.Text = "No Title";
+            WebDisplay view = new WebDisplay();
+            WebPreferences prefs = new WebPreferences();
+            prefs.UniversalAccessFromFileUrlsAllowed = false;
+            view.Preferences = prefs;
+            view.InitializeEngine("about:blank");
+            view.Focus();
             tbp.Controls.Add(view);
             TabC.Controls.Add(tbp);
             TabC.ActiveTabPage = tbp;
-            //view.Dock = DockStyle.Fill;
             view.Anchor = (AnchorStyles)(AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top);
             if (panel1.Visible == false)
             {
                 view.Size = new System.Drawing.Size(tbp.Width, tbp.Height);
-                view.Location = new Point(0, panel1.Height - 68);
+                view.Location = new Point(0, 0);
             }
             else
             {
                 view.Size = new System.Drawing.Size(tbp.Width, tbp.Height - panel1.Height);
-                view.Location = new Point(0, panel1.Height );
+                view.Location = new Point(0, panel1.Height);
             }
             //ShowNavBar(view);
             if (!string.IsNullOrEmpty(u))
@@ -1288,10 +1290,99 @@ namespace Cheetah
                     Search(u);
             OnTabChangedTriggered();
             DoOverflow();
+            AddEvents(view);
             //AddContextMenus(view);
            btnaddtab.Left = tbp.TabButton.Left + tbp.TabButton.Width - 5;
         }
 
+        internal void AddEvents(WebDisplay dis)
+        {
+            dis.DocumentComplete += dis_DocumentComplete;
+            dis.DocumentTitleChanged += dis_DocumentTitleChanged;
+            dis.BeginFrameLoading += dis_BeginDocumentLoading;
+            dis.StatusChanged += dis_StatusChanged;
+            dis.NewWindowRequested += dis_NewWindowRequested;
+            dis.AddressChanged += dis_AddressChanged;
+            dis.ShowJSDialog += dis_ShowJSDialog;
+        }
+
+        void dis_AddressChanged(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.AddresseChangedEventArgs e)
+        {
+            try
+            {
+                if (sender.Equals(Browser))
+                    txturl.Text = e.Url;
+            }
+            catch { }
+        }
+
+        void dis_BeginDocumentLoading(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.BeginFrameLoadingEventArgs e)
+        {
+            try
+            {
+                if (sender.Equals(Browser))
+                    pictureBox5.Image = Properties.Resources.stop;
+            }
+            catch { }
+        }
+
+        void dis_ShowJSDialog(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.ShowJSDialogEventArgs e)
+        {
+            switch (e.Type)
+            {
+                case ChromiumEngine.Enum.JSDialogType.Alert:
+                    MessageBox.Show(e.Message, "The current page says:");
+                    break;
+                case ChromiumEngine.Enum.JSDialogType.Confirm:
+                    e.Result = MessageBox.Show(e.Message, "The current page asks:", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.OK;
+                    break;
+                case ChromiumEngine.Enum.JSDialogType.Prompt:
+                    e.PromptInputText = Microsoft.VisualBasic.Interaction.InputBox(e.Message, "The page requests the following:", e.DefaultPromptInputText);
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        void dis_NewWindowRequested(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.NewWindowRequestEventArgs e)
+        {
+            AddTab(e.Url);
+        }
+
+        void dis_StatusChanged(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.StatusMessageEventArgs e)
+        {
+            try
+            {
+                status.Visible = !string.IsNullOrWhiteSpace(e.Text);
+                if (status.Visible == false)
+                    return;
+                if (e.Text.Length < 51)
+                    status.Text = e.Text;
+                else
+                    status.Text = e.Text.Substring(0, 51) + "...";
+            }
+            catch { }
+        }
+
+        void dis_DocumentTitleChanged(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.DocumentTitleChangedEventArgs e)
+        {
+            try
+            {
+                (Browser.Parent as QTabPage).Text = e.Title;
+            }
+            catch { }
+        }
+
+        void dis_DocumentComplete(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.UrlEventArgs e)
+        {
+            try
+            {
+                if (sender.Equals(Browser))
+                    pictureBox5.Image = Properties.Resources.Refresh;
+                textBox2.Text = e.Url;
+                //History.Add(sender.DocumentTitle, sender.Url, DateTime.Now, Bookmarking.ImageToBase64(sender.GetFaviconFromDocument().ToBitmap(), System.Drawing.Imaging.ImageFormat.Icon));
+            }
+            catch { }
+        }
         internal void OnTabChangedTriggered()
         {
             int posx = button1.Width + 4 + TabC.Controls.TabPagesCount * (TabC.TabStripTopConfiguration.ButtonSpacing + TabC.TabStripTopConfiguration.ButtonConfiguration.MinimumSize.Width);
@@ -1371,7 +1462,173 @@ namespace Cheetah
 
         private void btnaddtab_Click(object sender, EventArgs e)
         {
-            AddTab("");
+            AddTab("about:blank");
+        }
+
+        private void txturl_KeyDown(object sender, KeyEventArgs e)
+        {
+            //WebDisplay wb = Browser;
+            if (e.Shift && e.Control && e.KeyCode == Keys.Enter)
+            {
+                if ((!txturl.Text.EndsWith(".org")) && txturl.Text.StartsWith("www."))
+                    Browser.Navigate(txturl.Text + ".org");
+                else if ((txturl.Text.EndsWith(".org") && (!txturl.Text.StartsWith("www."))))
+                    Browser.Navigate("www." + txturl.Text);
+                else if (!(txturl.Text.EndsWith(".org") && txturl.Text.StartsWith("www.")))
+                    Browser.Navigate("www." + txturl.Text + ".org");
+                Browser.Select();
+            }
+            else if (e.Control && e.KeyCode == Keys.Enter)
+            {
+                if ((!txturl.Text.EndsWith(".com")) && txturl.Text.StartsWith("www."))
+                {
+                    string s = txturl.Text + ".com";
+                    Browser.Navigate(s);
+                }
+                else if ((txturl.Text.EndsWith(".com") && (!txturl.Text.StartsWith("www."))))
+                {
+                    string s = "www." + txturl.Text;
+                    Browser.Navigate(s);
+                }
+                else if (!(txturl.Text.EndsWith(".com") && txturl.Text.StartsWith("www.")))
+                {
+                    string s = "www." + txturl.Text + ".com";
+                    Browser.Navigate(s);
+                }
+                Browser.Select();
+            }
+            else if (e.Shift && e.KeyCode == Keys.Enter)
+            {
+                if ((!txturl.Text.EndsWith(".net")) && txturl.Text.StartsWith("www."))
+                    Browser.Navigate(txturl.Text + ".net");
+                else if ((txturl.Text.EndsWith(".net") && (!txturl.Text.StartsWith("www."))))
+                    Browser.Navigate("www." + txturl.Text);
+                else if (!(txturl.Text.EndsWith(".net") && txturl.Text.StartsWith("www.")))
+                    Browser.Navigate("www." + txturl.Text + ".net");
+                Browser.Select();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                if (IsURL(txturl.Text))
+                    Browser.Navigate(txturl.Text);
+                else if (txturl.Text == "cheetah:credits")
+                    Browser.Navigate(Application.StartupPath + "/Sources/credit.html");
+                else if (txturl.Text == "cheetah:license")
+                    Browser.Navigate(Application.StartupPath + "/Sources/license.html");
+                else if (txturl.Text == "cheetah:plugins")
+                    Browser.Navigate(Application.StartupPath + "/Sources/plugin.html");
+                else if (txturl.Text == "cheetah:blank")
+                    Browser.Navigate("about:blank");
+                else if (txturl.Text == "cheetah:home")
+                    Browser.Navigate(Application.StartupPath + "/Sources/start.htm");
+                else
+                    Search(txturl.Text);
+                Browser.Select();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            AddTab("http://google.com/");
+            txturl.AutoCompleteCustomSource = Program.autocompletedata;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Browser.GoBack();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Browser.GoForward();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (Browser.IsLoading)
+                Browser.StopNavigation();
+            else
+                Browser.Reload();
+        }
+        #region controlbox
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            btnclose.Image = Properties.Resources.cls2;
+            this.Close();
+        }
+
+        private void btnclose_MouseHover(object sender, EventArgs e)
+        {
+            btnclose.Image = Properties.Resources.cls;
+        }
+
+        private void btnclose_MouseLeave(object sender, EventArgs e)
+        {
+            btnclose.Image = Properties.Resources.cls1;
+        }
+        private void btnmaximize_Click(object sender, EventArgs e)
+        {
+            btnmaximize.Image = Properties.Resources.rest2;
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void btnmaximize_MouseHover(object sender, EventArgs e)
+        {
+            btnmaximize.Image = Properties.Resources.rest;
+        }
+
+        private void btnmaximize_MouseLeave(object sender, EventArgs e)
+        {
+            btnmaximize.Image = Properties.Resources.rest1;
+        }
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            btnminimize.Image = Properties.Resources.min2;
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnminimize_MouseHover(object sender, EventArgs e)
+        {
+            btnminimize.Image = Properties.Resources.min;
+        }
+
+        private void btnminimize_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimize.Image = Properties.Resources.min1;
+        }
+        #endregion
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCloseTab_Click(object sender, EventArgs e)
+        {
+            if (TabC.Controls.TabPagesCount == 1)
+                this.Close();
+            else
+                TabC.ActiveTabPage.Close();
+        }
+
+        internal void RefreshBookmarksAndHistory(bool p)
+        {
+        }
+
+        private void TabC_ActivePageChanged(object sender, QTabPageChangeEventArgs e)
+        {
+            if (Browser == null)
+                return;
+            try
+            {
+                if (!Browser.IsLoading)
+                    pictureBox5.Image = Properties.Resources.Refresh;
+                else
+                    pictureBox5.Image = Properties.Resources.stop;
+                txturl.Text = Browser.Url;
+            }
+            catch { }
         }
     }
 }

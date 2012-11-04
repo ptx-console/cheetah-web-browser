@@ -59,33 +59,30 @@
             this.MenuItem9 = new System.Windows.Forms.MenuItem();
             this.MenuItem11 = new System.Windows.Forms.MenuItem();
             this.MenuItem12 = new System.Windows.Forms.MenuItem();
-            this.TabC = new QAdvancedTabControlSample.QTabControlEx();
-            this.qTabPage1 = new Qios.DevSuite.Components.QTabPage();
-            this.wb = new ChromiumEngine.WindowsForms.WebDisplay();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.status = new System.Windows.Forms.Label();
             this.BookmarkBar = new System.Windows.Forms.ToolStrip();
-            this.metroButtons1 = new Cheetah.MetroToolkit.MetroButtons();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pctimage = new System.Windows.Forms.PictureBox();
-            this.txturl = new Cheetah.WaterMarkTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.metroButtons1 = new Cheetah.MetroToolkit.MetroButtons();
+            this.txturl = new Cheetah.WaterMarkTextBox();
+            this.TabC = new QAdvancedTabControlSample.QTabControlEx();
             this.button1 = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.btnaddtab = new System.Windows.Forms.PictureBox();
             this.btnCloseTab = new System.Windows.Forms.PictureBox();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
-            this.lblStatus = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.TabC)).BeginInit();
-            this.TabC.SuspendLayout();
-            this.qTabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctimage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabC)).BeginInit();
+            this.TabC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.button1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
@@ -276,9 +273,141 @@
             this.MenuItem12.Index = 6;
             this.MenuItem12.Text = "Close other tab";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.status);
+            this.panel1.Controls.Add(this.BookmarkBar);
+            this.panel1.Controls.Add(this.metroButtons1);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pctimage);
+            this.panel1.Controls.Add(this.txturl);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Location = new System.Drawing.Point(0, 36);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(784, 63);
+            this.panel1.TabIndex = 4;
+            // 
+            // status
+            // 
+            this.status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.status.BackColor = System.Drawing.Color.Transparent;
+            this.status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.status.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.status.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.status.Location = new System.Drawing.Point(227, 7);
+            this.status.Name = "status";
+            this.status.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.status.Size = new System.Drawing.Size(440, 24);
+            this.status.TabIndex = 86;
+            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.status.Visible = false;
+            // 
+            // BookmarkBar
+            // 
+            this.BookmarkBar.BackColor = System.Drawing.Color.Transparent;
+            this.BookmarkBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BookmarkBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.BookmarkBar.Location = new System.Drawing.Point(0, 38);
+            this.BookmarkBar.Name = "BookmarkBar";
+            this.BookmarkBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.BookmarkBar.Size = new System.Drawing.Size(784, 25);
+            this.BookmarkBar.TabIndex = 85;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(667, 7);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(26, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 84;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pctimage
+            // 
+            this.pctimage.BackColor = System.Drawing.Color.Transparent;
+            this.pctimage.Image = ((System.Drawing.Image)(resources.GetObject("pctimage.Image")));
+            this.pctimage.Location = new System.Drawing.Point(76, 7);
+            this.pctimage.Name = "pctimage";
+            this.pctimage.Size = new System.Drawing.Size(23, 25);
+            this.pctimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pctimage.TabIndex = 81;
+            this.pctimage.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(42, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(7, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+            this.textBox2.Location = new System.Drawing.Point(75, 6);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(619, 27);
+            this.textBox2.TabIndex = 83;
+            // 
+            // metroButtons1
+            // 
+            this.metroButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButtons1.BackColor = System.Drawing.Color.Transparent;
+            this.metroButtons1.ButtonText = "MENU";
+            this.metroButtons1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.metroButtons1.ForceUppercase = true;
+            this.metroButtons1.ForeColor = System.Drawing.Color.Black;
+            this.metroButtons1.Location = new System.Drawing.Point(702, 6);
+            this.metroButtons1.Name = "metroButtons1";
+            this.metroButtons1.Size = new System.Drawing.Size(73, 27);
+            this.metroButtons1.TabIndex = 5;
+            // 
+            // txturl
+            // 
+            this.txturl.AllowDrop = true;
+            this.txturl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txturl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txturl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txturl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txturl.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.txturl.Location = new System.Drawing.Point(98, 9);
+            this.txturl.Name = "txturl";
+            this.txturl.Size = new System.Drawing.Size(567, 20);
+            this.txturl.TabIndex = 82;
+            this.txturl.WaterMarkColor = System.Drawing.Color.Gray;
+            this.txturl.WaterMarkText = "Websites or Search";
+            this.txturl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txturl_KeyDown);
+            // 
             // TabC
             // 
-            this.TabC.ActiveTabPage = this.qTabPage1;
             this.TabC.AllowDrag = true;
             this.TabC.AllowDrop = true;
             this.TabC.AllowExternalDrag = true;
@@ -310,8 +439,6 @@
             this.TabC.Controls.Add(this.btnaddtab);
             this.TabC.Controls.Add(this.btnCloseTab);
             this.TabC.Controls.Add(this.btnmaximize);
-            this.TabC.Controls.Add(this.lblStatus);
-            this.TabC.Controls.Add(this.qTabPage1);
             this.TabC.Cursor = System.Windows.Forms.Cursors.Default;
             this.TabC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabC.Location = new System.Drawing.Point(0, 0);
@@ -338,142 +465,12 @@
             this.TabC.TabStripTopConfiguration.StackBehavior = Qios.DevSuite.Components.QTabStripStackBehaviors.None;
             this.TabC.TabStripTopConfiguration.StripPadding = new Qios.DevSuite.Components.QPadding(33, 5, 0, 111);
             this.TabC.Text = "QTabControl1";
+            this.TabC.ActivePageChanged += new Qios.DevSuite.Components.QTabPageChangeEventHandler(this.TabC_ActivePageChanged);
             this.TabC.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.TabC_ControlAdded);
             this.TabC.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.TabC_ControlRemoved);
             this.TabC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabC_MouseDown);
             this.TabC.MouseLeave += new System.EventHandler(this.TabC_MouseLeave);
             this.TabC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabC_MouseMove);
-            // 
-            // qTabPage1
-            // 
-            this.qTabPage1.ButtonOrder = 0;
-            this.qTabPage1.Controls.Add(this.wb);
-            this.qTabPage1.Controls.Add(this.panel1);
-            this.qTabPage1.Location = new System.Drawing.Point(0, 35);
-            this.qTabPage1.Name = "qTabPage1";
-            this.qTabPage1.PersistGuid = new System.Guid("6d83b619-b6c0-4b78-b0e6-724149b8e774");
-            this.qTabPage1.Size = new System.Drawing.Size(784, 526);
-            this.qTabPage1.Text = "qTabPage1";
-            // 
-            // wb
-            // 
-            this.wb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wb.Location = new System.Drawing.Point(0, 63);
-            this.wb.Name = "wb";
-            this.wb.Preferences = null;
-            this.wb.Size = new System.Drawing.Size(784, 463);
-            this.wb.TabIndex = 5;
-            this.wb.SetZoomLevel(200D);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.BookmarkBar);
-            this.panel1.Controls.Add(this.metroButtons1);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pctimage);
-            this.panel1.Controls.Add(this.txturl);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 63);
-            this.panel1.TabIndex = 4;
-            // 
-            // BookmarkBar
-            // 
-            this.BookmarkBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BookmarkBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.BookmarkBar.Location = new System.Drawing.Point(0, 38);
-            this.BookmarkBar.Name = "BookmarkBar";
-            this.BookmarkBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.BookmarkBar.Size = new System.Drawing.Size(784, 25);
-            this.BookmarkBar.TabIndex = 85;
-            // 
-            // metroButtons1
-            // 
-            this.metroButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButtons1.BackColor = System.Drawing.Color.Transparent;
-            this.metroButtons1.ButtonText = "MENU";
-            this.metroButtons1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.metroButtons1.ForceUppercase = true;
-            this.metroButtons1.ForeColor = System.Drawing.Color.Black;
-            this.metroButtons1.Location = new System.Drawing.Point(702, 6);
-            this.metroButtons1.Name = "metroButtons1";
-            this.metroButtons1.Size = new System.Drawing.Size(73, 27);
-            this.metroButtons1.TabIndex = 5;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(667, 7);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(26, 25);
-            this.pictureBox5.TabIndex = 84;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pctimage
-            // 
-            this.pctimage.BackColor = System.Drawing.Color.Transparent;
-            this.pctimage.Image = ((System.Drawing.Image)(resources.GetObject("pctimage.Image")));
-            this.pctimage.Location = new System.Drawing.Point(76, 7);
-            this.pctimage.Name = "pctimage";
-            this.pctimage.Size = new System.Drawing.Size(23, 25);
-            this.pctimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pctimage.TabIndex = 81;
-            this.pctimage.TabStop = false;
-            // 
-            // txturl
-            // 
-            this.txturl.AllowDrop = true;
-            this.txturl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txturl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txturl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txturl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txturl.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.txturl.Location = new System.Drawing.Point(100, 9);
-            this.txturl.Name = "txturl";
-            this.txturl.Size = new System.Drawing.Size(565, 20);
-            this.txturl.TabIndex = 82;
-            this.txturl.WaterMarkColor = System.Drawing.Color.Gray;
-            this.txturl.WaterMarkText = "Websites or Search";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(42, 6);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
-            this.textBox2.Location = new System.Drawing.Point(75, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(619, 27);
-            this.textBox2.TabIndex = 83;
             // 
             // button1
             // 
@@ -484,6 +481,7 @@
             this.button1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.button1.TabIndex = 3;
             this.button1.TabStop = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnminimize
             // 
@@ -509,6 +507,9 @@
             this.btnclose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnclose.TabIndex = 15;
             this.btnclose.TabStop = false;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            this.btnclose.MouseLeave += new System.EventHandler(this.btnclose_MouseLeave);
+            this.btnclose.MouseHover += new System.EventHandler(this.btnclose_MouseHover);
             // 
             // btnaddtab
             // 
@@ -527,6 +528,7 @@
             // 
             this.btnCloseTab.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCloseTab.ErrorImage = null;
+            this.btnCloseTab.Image = global::Cheetah.Properties.Resources.CloseMask;
             this.btnCloseTab.Location = new System.Drawing.Point(215, 16);
             this.btnCloseTab.Name = "btnCloseTab";
             this.btnCloseTab.Size = new System.Drawing.Size(16, 16);
@@ -534,6 +536,7 @@
             this.btnCloseTab.TabIndex = 5;
             this.btnCloseTab.TabStop = false;
             this.btnCloseTab.Visible = false;
+            this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
             // 
             // btnmaximize
             // 
@@ -546,19 +549,9 @@
             this.btnmaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnmaximize.TabIndex = 16;
             this.btnmaximize.TabStop = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.BackColor = System.Drawing.Color.White;
-            this.lblStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(0, 540);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(2, 21);
-            this.lblStatus.TabIndex = 26;
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmaximize.Click += new System.EventHandler(this.btnmaximize_Click);
+            this.btnmaximize.MouseLeave += new System.EventHandler(this.btnmaximize_MouseLeave);
+            this.btnmaximize.MouseHover += new System.EventHandler(this.btnmaximize_MouseHover);
             // 
             // Form1
             // 
@@ -566,20 +559,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TabC);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cheetah";
-            ((System.ComponentModel.ISupportInitialize)(this.TabC)).EndInit();
-            this.TabC.ResumeLayout(false);
-            this.TabC.PerformLayout();
-            this.qTabPage1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctimage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TabC)).EndInit();
+            this.TabC.ResumeLayout(false);
+            this.TabC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.button1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
@@ -594,14 +589,12 @@
 
         internal Qios.DevSuite.Components.QShape QShape1;
         internal QAdvancedTabControlSample.QTabControlEx TabC;
-        private Qios.DevSuite.Components.QTabPage qTabPage1;
         private System.Windows.Forms.PictureBox button1;
         internal System.Windows.Forms.PictureBox btnminimize;
         internal System.Windows.Forms.PictureBox btnclose;
         internal System.Windows.Forms.PictureBox btnaddtab;
         internal System.Windows.Forms.PictureBox btnCloseTab;
         internal System.Windows.Forms.PictureBox btnmaximize;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.PictureBox pictureBox5;
         internal System.Windows.Forms.PictureBox pctimage;
@@ -611,7 +604,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private MetroToolkit.MetroButtons metroButtons1;
         private System.Windows.Forms.ToolStrip BookmarkBar;
-        private ChromiumEngine.WindowsForms.WebDisplay wb;
         private System.Windows.Forms.ContextMenu CMTabspace;
         internal System.Windows.Forms.MenuItem CMTrestore;
         internal System.Windows.Forms.MenuItem CMTminimize;
@@ -641,6 +633,7 @@
         internal System.Windows.Forms.MenuItem MenuItem9;
         internal System.Windows.Forms.MenuItem MenuItem11;
         internal System.Windows.Forms.MenuItem MenuItem12;
+        private System.Windows.Forms.Label status;
 
     }
 }

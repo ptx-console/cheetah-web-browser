@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+	<title>Credits</title>
+	<meta name="keyword" content="credits, praken, praken surf, credits"/>
+	<meta name="description" content="Credits"/>
+</head>
+<style type="text/css">
+body {
+background-color:	#fff;
+margin:				60px;
+font-family:		'Segoe UI Light', Verdana, Sans-serif;
+font-size:			26px;
+color:				#339933;
+}
+
+a{	
+	color: #fff;
+	text-decoration:none;
+}
+a:hover{
+	color: #999;
+	text-decoration:none;
+	}
+	
+#hl {
+border:				#33FF33 1px solid;
+}
+
+#det {
+color:				#999;
+}
+
+#content  {
+text-shadow			: 0 0 0px #000  ;
+border:				#999 1px solid;
+padding:			20px 20px 12px 20px;
+font-family:		'Segoe UI Light', Verdana, Sans-serif;
+font-size:			14px;
+color:				#000;
+}
+
+.page-title {
+
+font-size:164%;
+
+font-weight:bold;
+
+}
+
+.product {
+
+background-color:#339933;
+
+overflow:auto;
+
+padding:2px;
+
+margin-top:16px;
+
+border-radius:0px;
+
+}
+
+.product .title {
+
+font-size:110%;
+
+font-weight:bold;
+
+float:left;
+
+margin:3px;
+
+color: #fff;
+}
+
+.product .homepage {
+
+text-align:right;
+
+float:right;
+
+margin:3px;
+
+}
+
+.product .homepage:after {
+
+content:" - ";
+
+}
+
+.product .show {
+
+text-align:right;
+
+float:right;
+
+margin:3px;
+
+}
+
+.licence {
+
+clear:both;
+
+background-color:#fff;
+
+padding:16px;
+
+border-radius:3px;
+
+display:none;
+
+}
+
+.licence h3 {
+
+margin-top:0px;
+
+}
+
+</style>
+<script>
+
+function $(o) {return document.getElementById(o);}
+
+function toggle(o) {
+
+var licence = o.nextSibling;
+
+
+
+while (licence.className != 'licence') {
+
+if (!licence) return false;
+
+licence = licence.nextSibling;
+
+}
+
+
+
+if (licence.style && licence.style.display == 'block') {
+
+licence.style.display = 'none';
+
+o.innerHTML = 'show';
+
+} else {
+
+licence.style.display = 'block';
+
+o.innerHTML = 'hide';
+
+}
+
+return false;
+
+}
+
+</script>
+</head>
+<body>
+Credits
+<br>
+<div id='hl'>
+</div>
+<div id="content">
+<div style="clear:both; overflow:auto;">
+
+    <div class="product">
+
+        <span class="title">Development Help</span>
+
+<a class="show" href="#" onclick="return toggle(this);">show</a>
+
+<span class="homepage"><a href="http://praken.tk/">homepage</a></span>
+
+<div class="licence"> <pre>
+- Colin Verhey
+
+- Owynn Kenli
+
+- Elizabeth Anastasya S.
+
+- VBCoder
+
+- Lubomir
+
+- VisualTech48
+
+- Glimmer Studios
+
+- Alexrozon
+
+- http://iconfinder.com
+</pre>
+
+</div>
+
+</div>
+
+<div class="product">
+
+    <span class="title">Awesomium</span>
+
+<a class="show" href="#" onclick="return toggle(this);">show</a>
+
+<span class="homepage"><a href="http://awesomium.com/">homepage</a></span>
+
+<div class="licence">
+
+    <pre>Copyright (c) Awesomium
+
+</pre>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+</body>
+</html>
