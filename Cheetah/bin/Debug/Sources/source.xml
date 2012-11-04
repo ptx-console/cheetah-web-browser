@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content>
+	<cols>4</cols><!-- set number of columns -->
+	<img>
+		<width>160</width><!-- set width of thumbnails -->
+		<height>90</height><!-- set height of thumbnails -->	
+	</img>
+	<!-- set your favourite bookmarks, you can use as many bookmarks as you like -->
+	<bookmark>
+		<title>google</title>
+		<url>http://google.com</url>
+		<thumb>google.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>YouTube</title>
+		<url>http://youtube.com</url>
+		<thumb>youtube.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>deviantART</title>
+		<url>http://deviantart.com</url>
+		<thumb>deviantart.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>wikipedia</title>
+		<url>http://wikipedia.org</url>
+		<thumb>wikipedia.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>BBC news</title>
+		<url>http://www.bbc.co.uk/news/</url>
+		<thumb>bbcnews.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>iTunes</title>
+		<url>http://www.apple.com/itunes/</url>
+		<thumb>itunes.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>facebook</title>
+		<url>http://facebook.com</url>
+		<thumb>facebook.png</thumb>
+	</bookmark>
+	<bookmark>
+		<title>twitter</title>
+		<url>http://twitter.com</url>
+		<thumb>twitter.png</thumb>
+	</bookmark>
+</content>

@@ -11,6 +11,7 @@
     <AssemblyName>Cheetah</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -18,9 +19,10 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,11 +33,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Cheetah.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cheetah.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ChromiumEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ChromiumEngine, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Download Projects\ChromiumEngine v4.1\DLL\ChromiumEngine.dll</HintPath>
+      <HintPath>..\..\ChromiumEngine v4.1\DLL\ChromiumEngine.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Qios.DevSuite.Components">
       <HintPath>..\..\..\..\..\..\Program Files\Praken\Praken Surf\Qios.DevSuite.Components.dll</HintPath>
     </Reference>
@@ -54,12 +63,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AboutCheetah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutCheetah.Designer.cs" />
+    <Compile Include="AuthenticationPasswords.cs" />
+    <Compile Include="Bookmarking.cs" />
+    <Compile Include="Forms\CheetahLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheetahLogin.Designer.cs" />
+    <Compile Include="Forms\CheetahSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheetahSettings.Designer.cs" />
+    <Compile Include="Forms\CloseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CloseDialog.Designer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdaterC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdaterC.designer.cs">
+      <DependentUpon>UpdaterC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History.cs" />
+    <Compile Include="Forms\InfoWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InfoWeb.Designer.cs" />
+    <Compile Include="Forms\Library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Library.Designer.cs" />
+    <Compile Include="Forms\MessageCheetah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageCheetah.Designer.cs" />
     <Compile Include="MetroToolkit\LabelButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,14 +140,70 @@
       <DependentUpon>QTabControlEx.cs</DependentUpon>
     </Compile>
     <Compile Include="QTabControl\QTabStripPainterEx.cs" />
+    <Compile Include="Forms\SendReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SendReport.Designer.cs" />
+    <Compile Include="Source control\AutocompleteItem.cs" />
+    <Compile Include="Source control\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source control\Char.cs" />
+    <Compile Include="Source control\CheetahMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source control\CheetahMessage.designer.cs">
+      <DependentUpon>CheetahMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source control\CommandManager.cs" />
+    <Compile Include="Source control\Commands.cs" />
+    <Compile Include="Source control\Export.cs" />
+    <Compile Include="Source control\FastColoredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source control\FastColoredTextBox.designer.cs">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source control\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source control\FindForm.designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source control\FindForm1.Designer.cs" />
+    <Compile Include="Source control\LimitedStack.cs" />
+    <Compile Include="Source control\Line.cs" />
+    <Compile Include="Source control\Place.cs" />
+    <Compile Include="Source control\Range.cs" />
+    <Compile Include="Source control\ReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source control\ReplaceForm.designer.cs">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source control\ReplaceForm1.Designer.cs" />
+    <Compile Include="Source control\Style.cs" />
+    <Compile Include="Source control\SyntaxDescriptor.cs" />
+    <Compile Include="Source control\SyntaxHighlighter.cs" />
+    <Compile Include="Source control\VisualMarker.cs" />
     <Compile Include="WaterMarkTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WaterMarkTextBox.designer.cs">
       <DependentUpon>WaterMarkTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AboutCheetah.resx" />
+    <EmbeddedResource Include="Forms\CheetahLogin.resx" />
+    <EmbeddedResource Include="Forms\CheetahSettings.resx" />
+    <EmbeddedResource Include="Forms\CloseDialog.resx" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InfoWeb.resx" />
+    <EmbeddedResource Include="Forms\Library.resx" />
+    <EmbeddedResource Include="Forms\MessageCheetah.resx" />
+    <EmbeddedResource Include="Forms\UpdaterC.resx">
+      <DependentUpon>UpdaterC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MetroToolkit\LabelButton.resx">
       <DependentUpon>LabelButton.cs</DependentUpon>
@@ -125,6 +227,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\SendReport.resx" />
+    <EmbeddedResource Include="Forms\ViewSource.resx" />
+    <EmbeddedResource Include="Source control\CheetahMessage.resx">
+      <DependentUpon>CheetahMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source control\FastColoredTextBox.resx">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source control\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source control\ReplaceForm.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -174,6 +290,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ADD TAB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bug1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dictionary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Feedback1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cheetah.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cheetah.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
