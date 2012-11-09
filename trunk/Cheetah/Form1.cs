@@ -1263,6 +1263,7 @@ namespace Cheetah
             WebDisplay view = new WebDisplay();
             WebPreferences prefs = new WebPreferences();
             prefs.UniversalAccessFromFileUrlsAllowed = false;
+            prefs.WebGLDisabled = false;
             view.Preferences = prefs;
             view.InitializeEngine("about:blank");
             view.Focus();
@@ -1530,6 +1531,7 @@ namespace Cheetah
         private void Form1_Load(object sender, EventArgs e)
         {
             AddTab("http://google.com/");
+            RefreshBookmarksAndHistory();
             txturl.AutoCompleteCustomSource = Program.autocompletedata;
         }
 
@@ -1612,8 +1614,43 @@ namespace Cheetah
                 TabC.ActiveTabPage.Close();
         }
 
-        internal void RefreshBookmarksAndHistory(bool p)
+        public void RefreshBookmarksAndHistory(bool u = false)
         {
+            bool res = false;
+            foreach (Form f in Application.OpenForms)
+                if (f is Form1 && f.Equals(this) == false && u == false)
+                {
+                    this.txturl.AutoCompleteCustomSource = ((Form1)f).txturl.AutoCompleteCustomSource;
+                    res = true;
+                    break;
+                }
+            if (res == false)
+            {
+                txturl.AutoCompleteCustomSource = Program.autocompletedata;
+            }
+            BackgroundWorker refreshbookandhisasync = new BackgroundWorker();
+            refreshbookandhisasync.DoWork += delegate(object sender, DoWorkEventArgs e)
+            {
+                BookmarksBar.Items.Clear();
+                if (Bookmarking.GetItemsCount() != 0)
+                    for (int i = 0; i < Bookmarking.GetItemsCount(); i++)
+                    {
+                        ToolStripButton but = new ToolStripButton() { Text = Bookmarking.Name(i), ToolTipText = Bookmarking.Url(i), Image = Bookmarking.Favicon(i) };
+                        if (but.Text.Length > 24)
+                            but.Text = but.Text.Substring(0, 24) + "...";
+                        but.MouseDown += delegate(object o, MouseEventArgs args1) { if (args1.Button == System.Windows.Forms.MouseButtons.Middle) { AddTab((o as ToolStripButton).ToolTipText); } if (args1.Button == System.Windows.Forms.MouseButtons.Left) { Browser.Navigate((o as ToolStripItem).ToolTipText); } };
+                        BookmarksBar.Items.Add(but);
+                    }
+
+                else
+                {
+                    BookmarksBar.Items.Add(new ToolStripLabel("This is the bookmarks bar. You have added no bookmarks so far! "));
+                }
+                e = null;
+                (sender as BackgroundWorker).Dispose();
+            };
+            refreshbookandhisasync.RunWorkerAsync();
+
         }
 
         private void TabC_ActivePageChanged(object sender, QTabPageChangeEventArgs e)
@@ -1629,6 +1666,155 @@ namespace Cheetah
                 txturl.Text = Browser.Url;
             }
             catch { }
+        }
+
+
+        private void status_SizeChanged(object sender, EventArgs e)
+        {
+            (sender as Control).Left = pictureBox5.Left - (sender as Control).Width;
+        }
+
+        private void txturl_DragEnter(object sender, DragEventArgs e)
+        {
+           e.Effect = DragDropEffects.Copy;
+        }
+
+        private void txturl_DragDrop(object sender, DragEventArgs e)
+        {
+            txturl.Text = (string)e.Data.GetData(typeof(String));
+        }
+
+        private void txturl_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+        ColorAnimator currentlyanimating = null;
+        private void pictureBox5_MouseHover(object sender, EventArgs e)
+        {
+            if (currentlyanimating != null)
+            {
+                if (currentlyanimating.IsDisposed == false)
+                    currentlyanimating.Dispose();
+                currentlyanimating = null;
+            }
+            ColorAnimator an = new ColorAnimator((sender as Control));
+            currentlyanimating = an;
+            an.Animate(210,210,226, true);
+            //Transitions.Transition.run(pictureBox5.BackColor, "B", Convert.ToByte(255), Convert.ToByte(0), new Transitions.TransitionType_Acceleration(2000));
+        }
+
+        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (currentlyanimating != null)
+            {
+                if (currentlyanimating.IsDisposed == false)
+                    currentlyanimating.Dispose();
+                currentlyanimating = null;
+            }
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                pictureBox5.BackColor = Color.Teal;
+            }
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            if (currentlyanimating != null)
+            {
+                if (currentlyanimating.IsDisposed == false)
+                    currentlyanimating.Dispose();
+                currentlyanimating = null;
+            }
+            ColorAnimator an = new ColorAnimator((sender as Control));
+            currentlyanimating = an;
+            an.Animate(255, 255, 255);
+        }
+
+        private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                pictureBox5.BackColor = Color.FromArgb(0, 210, 210, 226);
+        }
+    }
+    public class ColorAnimator : IDisposable 
+    {
+        private Control con;
+        private Timer tim;
+        public ColorAnimator(Control c)
+        {
+            con = c;
+        }
+        internal bool IsDisposed = false;
+        public void Animate(int r = 255, int g = 255, int b = 255, bool reverse = false)
+        {
+            Timer tm = new Timer() { Interval = 1 };
+            tim = tm;
+            int sb = Convert.ToInt32(con.BackColor.B);
+            int sg = Convert.ToInt32(con.BackColor.G);
+            int sr = Convert.ToInt32(con.BackColor.R);
+            tm.Tick += delegate 
+            {
+                if (!reverse)
+                    if (sb < b)
+                    {
+                        sb++;
+                    }
+                    else { }
+                else
+                    if (sb > b)
+                    {
+                        sb--;
+                    }
+                    else { }
+                if (!reverse)
+                    if (sg < g)
+                    {
+                        sg++;
+                    }
+                    else { }
+                else
+                    if (sg > g)
+                    {
+                        sg--;
+                    }
+                    else { }
+                if (!reverse)
+                    if (sr < r)
+                    {
+                        sr++;
+                    }
+                    else { }
+                else
+                    if (sr > r)
+                    {
+                        sr--;
+                    }
+                    else { }
+                if (!reverse)
+                    if (sb >= b && sg >= g && sr >= r)
+                    {
+                        Dispose();
+                        return;
+                    }
+                    else { }
+                else
+                    if (sb <= b && sg <= g && sr <= r)
+                    {
+                       Dispose();
+                       return;
+                    }
+                con.BackColor = Color.FromArgb(sr, sg, sb);
+            };
+            tm.Start();
+        }
+
+        public void Dispose()
+        {
+            con = null;
+            tim.Dispose();
+            tim = null;
+            IsDisposed = true;
+            GC.Collect();
         }
     }
 }

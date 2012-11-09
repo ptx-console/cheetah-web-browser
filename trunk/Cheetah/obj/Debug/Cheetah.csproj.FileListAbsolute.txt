@@ -28,7 +28,6 @@ C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.exe
 C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.pdb
 C:\cheetah chromium\Cheetah\bin\Debug\Cheetah.exe
 C:\cheetah chromium\Cheetah\bin\Debug\Cheetah.pdb
-C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.csprojResolveAssemblyReference.cache
 C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.Form1.resources
 C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.MetroToolkit.LabelButton.resources
 C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.MetroToolkit.MetroButton.resources
@@ -51,3 +50,4 @@ C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.FastColoredTextBox.re
 C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.FindForm.resources
 C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.ReplaceForm.resources
 C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.UpdaterC.resources
+C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.csprojResolveAssemblyReference.cache

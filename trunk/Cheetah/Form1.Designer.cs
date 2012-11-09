@@ -61,21 +61,22 @@
             this.MenuItem12 = new System.Windows.Forms.MenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.status = new System.Windows.Forms.Label();
-            this.BookmarkBar = new System.Windows.Forms.ToolStrip();
+            this.BookmarksBar = new System.Windows.Forms.ToolStrip();
+            this.metroButtons1 = new Cheetah.MetroToolkit.MetroButtons();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pctimage = new System.Windows.Forms.PictureBox();
+            this.txturl = new Cheetah.WaterMarkTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.metroButtons1 = new Cheetah.MetroToolkit.MetroButtons();
-            this.txturl = new Cheetah.WaterMarkTextBox();
             this.TabC = new QAdvancedTabControlSample.QTabControlEx();
-            this.button1 = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
             this.btnaddtab = new System.Windows.Forms.PictureBox();
             this.btnCloseTab = new System.Windows.Forms.PictureBox();
             this.btnmaximize = new System.Windows.Forms.PictureBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.button1 = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctimage)).BeginInit();
@@ -83,12 +84,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabC)).BeginInit();
             this.TabC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.button1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnaddtab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseTab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // QShape1
@@ -279,7 +280,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.status);
-            this.panel1.Controls.Add(this.BookmarkBar);
+            this.panel1.Controls.Add(this.BookmarksBar);
             this.panel1.Controls.Add(this.metroButtons1);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pctimage);
@@ -294,29 +295,46 @@
             // 
             // status
             // 
-            this.status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.status.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.status.AutoSize = true;
             this.status.BackColor = System.Drawing.Color.Transparent;
             this.status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.status.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.status.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.status.Location = new System.Drawing.Point(227, 7);
+            this.status.Location = new System.Drawing.Point(414, 7);
             this.status.Name = "status";
             this.status.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.status.Size = new System.Drawing.Size(440, 24);
+            this.status.Size = new System.Drawing.Size(0, 21);
             this.status.TabIndex = 86;
-            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.status.UseCompatibleTextRendering = true;
             this.status.Visible = false;
+            this.status.SizeChanged += new System.EventHandler(this.status_SizeChanged);
             // 
-            // BookmarkBar
+            // BookmarksBar
             // 
-            this.BookmarkBar.BackColor = System.Drawing.Color.Transparent;
-            this.BookmarkBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BookmarkBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.BookmarkBar.Location = new System.Drawing.Point(0, 38);
-            this.BookmarkBar.Name = "BookmarkBar";
-            this.BookmarkBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.BookmarkBar.Size = new System.Drawing.Size(784, 25);
-            this.BookmarkBar.TabIndex = 85;
+            this.BookmarksBar.BackColor = System.Drawing.Color.Transparent;
+            this.BookmarksBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BookmarksBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.BookmarksBar.Location = new System.Drawing.Point(0, 38);
+            this.BookmarksBar.Name = "BookmarksBar";
+            this.BookmarksBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.BookmarksBar.Size = new System.Drawing.Size(784, 25);
+            this.BookmarksBar.TabIndex = 85;
+            // 
+            // metroButtons1
+            // 
+            this.metroButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButtons1.BackColor = System.Drawing.Color.Transparent;
+            this.metroButtons1.ButtonText = "MENU";
+            this.metroButtons1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.metroButtons1.ForceUppercase = true;
+            this.metroButtons1.ForeColor = System.Drawing.Color.Black;
+            this.metroButtons1.Location = new System.Drawing.Point(702, 6);
+            this.metroButtons1.Name = "metroButtons1";
+            this.metroButtons1.Size = new System.Drawing.Size(73, 27);
+            this.metroButtons1.TabIndex = 5;
             // 
             // pictureBox5
             // 
@@ -330,6 +348,10 @@
             this.pictureBox5.TabIndex = 84;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseDown);
+            this.pictureBox5.MouseLeave += new System.EventHandler(this.pictureBox5_MouseLeave);
+            this.pictureBox5.MouseHover += new System.EventHandler(this.pictureBox5_MouseHover);
+            this.pictureBox5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseUp);
             // 
             // pctimage
             // 
@@ -341,6 +363,25 @@
             this.pctimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctimage.TabIndex = 81;
             this.pctimage.TabStop = false;
+            // 
+            // txturl
+            // 
+            this.txturl.AllowDrop = true;
+            this.txturl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txturl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txturl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txturl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txturl.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txturl.Location = new System.Drawing.Point(98, 10);
+            this.txturl.Name = "txturl";
+            this.txturl.Size = new System.Drawing.Size(567, 19);
+            this.txturl.TabIndex = 82;
+            this.txturl.WaterMarkColor = System.Drawing.Color.Gray;
+            this.txturl.WaterMarkText = "Enter websites or search term and press enter...";
+            this.txturl.DragDrop += new System.Windows.Forms.DragEventHandler(this.txturl_DragDrop);
+            this.txturl.DragEnter += new System.Windows.Forms.DragEventHandler(this.txturl_DragEnter);
+            this.txturl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txturl_KeyDown);
             // 
             // pictureBox3
             // 
@@ -376,36 +417,6 @@
             this.textBox2.Size = new System.Drawing.Size(619, 27);
             this.textBox2.TabIndex = 83;
             // 
-            // metroButtons1
-            // 
-            this.metroButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButtons1.BackColor = System.Drawing.Color.Transparent;
-            this.metroButtons1.ButtonText = "MENU";
-            this.metroButtons1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.metroButtons1.ForceUppercase = true;
-            this.metroButtons1.ForeColor = System.Drawing.Color.Black;
-            this.metroButtons1.Location = new System.Drawing.Point(702, 6);
-            this.metroButtons1.Name = "metroButtons1";
-            this.metroButtons1.Size = new System.Drawing.Size(73, 27);
-            this.metroButtons1.TabIndex = 5;
-            // 
-            // txturl
-            // 
-            this.txturl.AllowDrop = true;
-            this.txturl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txturl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txturl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txturl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txturl.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.txturl.Location = new System.Drawing.Point(98, 9);
-            this.txturl.Name = "txturl";
-            this.txturl.Size = new System.Drawing.Size(567, 20);
-            this.txturl.TabIndex = 82;
-            this.txturl.WaterMarkColor = System.Drawing.Color.Gray;
-            this.txturl.WaterMarkText = "Websites or Search";
-            this.txturl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txturl_KeyDown);
-            // 
             // TabC
             // 
             this.TabC.AllowDrag = true;
@@ -433,12 +444,12 @@
             this.TabC.ColorScheme.TabPageBorder.SetColor("VistaBlack", System.Drawing.Color.White, false);
             this.TabC.ColorScheme.TabStripBackground1.SetColor("VistaBlack", System.Drawing.Color.Transparent, false);
             this.TabC.ColorScheme.TabStripBackground2.SetColor("VistaBlack", System.Drawing.Color.Transparent, false);
-            this.TabC.Controls.Add(this.button1);
             this.TabC.Controls.Add(this.btnminimize);
             this.TabC.Controls.Add(this.btnclose);
             this.TabC.Controls.Add(this.btnaddtab);
             this.TabC.Controls.Add(this.btnCloseTab);
             this.TabC.Controls.Add(this.btnmaximize);
+            this.TabC.Controls.Add(this.toolStrip1);
             this.TabC.Cursor = System.Windows.Forms.Cursors.Default;
             this.TabC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabC.Location = new System.Drawing.Point(0, 0);
@@ -471,17 +482,6 @@
             this.TabC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabC_MouseDown);
             this.TabC.MouseLeave += new System.EventHandler(this.TabC_MouseLeave);
             this.TabC.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabC_MouseMove);
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(3, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 26);
-            this.button1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.button1.TabIndex = 3;
-            this.button1.TabStop = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnminimize
             // 
@@ -553,6 +553,34 @@
             this.btnmaximize.MouseLeave += new System.EventHandler(this.btnmaximize_MouseLeave);
             this.btnmaximize.MouseHover += new System.EventHandler(this.btnmaximize_MouseHover);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.button1});
+            this.toolStrip1.Location = new System.Drawing.Point(1, 4);
+            this.toolStrip1.MinimumSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(34, 32);
+            this.toolStrip1.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = false;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 30);
+            this.button1.Text = "toolStripButton1";
+            this.button1.ToolTipText = "Home";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,13 +602,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabC)).EndInit();
             this.TabC.ResumeLayout(false);
-            this.TabC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.button1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnaddtab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseTab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximize)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -589,7 +617,6 @@
 
         internal Qios.DevSuite.Components.QShape QShape1;
         internal QAdvancedTabControlSample.QTabControlEx TabC;
-        private System.Windows.Forms.PictureBox button1;
         internal System.Windows.Forms.PictureBox btnminimize;
         internal System.Windows.Forms.PictureBox btnclose;
         internal System.Windows.Forms.PictureBox btnaddtab;
@@ -603,7 +630,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox2;
         private MetroToolkit.MetroButtons metroButtons1;
-        private System.Windows.Forms.ToolStrip BookmarkBar;
+        private System.Windows.Forms.ToolStrip BookmarksBar;
         private System.Windows.Forms.ContextMenu CMTabspace;
         internal System.Windows.Forms.MenuItem CMTrestore;
         internal System.Windows.Forms.MenuItem CMTminimize;
@@ -634,6 +661,8 @@
         internal System.Windows.Forms.MenuItem MenuItem11;
         internal System.Windows.Forms.MenuItem MenuItem12;
         private System.Windows.Forms.Label status;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton button1;
 
     }
 }

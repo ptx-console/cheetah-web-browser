@@ -129,7 +129,7 @@
   <metadata name="CMPopup.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>453, 17</value>
   </metadata>
-  <metadata name="BookmarkBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="BookmarksBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>118, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -188,21 +188,6 @@
         rkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6
-        JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAACEklEQVRIS+3UzUsqYRQH4IGgVSBcaBsE
-        bdve1YULrloJQRAIQav+gLsK7vb6wYjgShQFdRGEoi4cEBIxUQeEIBRzYQp+LEIxGU3UMHz7nQsjg9jH
-        jOQq4fAuZjzPOec9DMcY49YRa0GokW9I8wQ0/1HtAqmG8vn8YTKZvAKkU4OpgTYSicQ//F4ootGoOJvN
-        dMPhkCsWi1yn03k316eg6XT6IxwOxwE8h0KhY0EQDGazeRQIBMRKpaIzmUx8JpM5eq/DD6HJZLLv9/vv
-        CUmlUgZK1uv1NkVR/G2xWCSbzSYCEgBdaIYkSTp2uVxPVH2hUDigRB6P56/D4XhoNps/q9XqPqAHQEwr
-        tNFut3kkZIhRq9XSI+mW3W6PUFIKdDPC3Rx1u90dp9N5D3AE/M9bXS0dXa1Wu+J5nnm93qfBYPAL1e5Z
-        rdY7GZFPdMrS6fQ53tn2+Xy3wFmpVLoGtrsILoVyuZwbl+7GRgUjkcgJ7kdSJl8Eg8Hg5Xg8zsdisXMs
-        ih7I1qcg+aV4PC4AYRRIfo0ObnBSzLujrghGcdqXARVmFJCxXC5zWBCu3+9zuDcOwIUMaV2G/yPFGIpK
-        qNFozEdNIEHyGFeC0FFDhlC5EVs1h6grJZTNZlca3aMM4TQqO1qEVuoIo3MCcKNyN87Ter2+ODo9np1R
-        oCPatje/NB9+gtR8ob+hLxnnlyRddldrg14BoUisQJ0eJBkAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnclose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAlCAYAAAA5iwvJAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAAB6
@@ -248,6 +233,26 @@
         scMmdXt7B4NDVhk4OaaQz+fJkQbbkJqsG5ZX1sEyONwUl2uPTer+/gHGJqZkoBSmkM0qg0Kj45Mt2T8Q
         2KQen0SYmZ2Xsbq28evrBcdMz8y15Mh7wiYlvryCfXH5Bwv2JWiXs/NLNqn39w+4Cd5pBtNzymYbAavV
         phlMUpFIBLSESUrtV6IW4/RvdLWp6knpSalNQO04fU/966S+AFEy+i1rFa2dAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>559, 17</value>
+  </metadata>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKgSURBVEhLnVY7iBRBEF3PXyCKH3CZ3emq6p5ZVlY4lUVF
+        EC5QUTMxUFBWRLwLVLjgRC8SBBEEQUzEzFQDUTz8BYpiIHIH/g3ETBMDPwgmJlo1M7t29/5md6GZpabq
+        vfr3FAoD/CLEqQjpkVF0cQCz/qq1Wm2RQbzD4H//H7zc3zKHhg71xigMv7rgGRHQlRwQ3VXY62kfmJA+
+        2TLWuTEwyZpSaZUBeOqDG6BzAsbPM0OTcCG3sPHvtpQo2md7GgGNezWZ6RuJBr3dB0bEz6ZsKp2MOT27
+        nUgAnrDeSEeiCKDug2uA2/V6fWEvz4hoXRQEP5u2Gul9GIYrHRsAWMEK3x0CoIm+IWcKxpjVnNqPTXul
+        1C+jzNbkteRcK3ps9fdsHMfL8oLbetwYD2wntdajBU7NVRFyaF+SJ8D1YcATZ4l2elm4VqhWq0uFiXOJ
+        8lK8GJqAOy3FoPMJkaKbLSwmKaYR0P2hCUCfSDC03iQYnOrFLayxwtiCjPWuTyCdUiHazC1LlTAsc1Gh
+        qlTJ1+N6nk0iQNzbycn5af7wmTNQfl7dhbfHHb6sngAHexG89Sa2kXilaFJaj2u0rTlgGvGIrcvpvdXU
+        7U4A8NohUHQoTZ1a68hFBvqoK8OZjOB0fgKgk2IUl+PQMpqXkHoEHOXzrItO5SZormyPYKQTAcvmsiJP
+        5yfg67FDBLwBJAIa94r8IpXD8R5FpjmvyJfEiFt0uS3ni+edXxdTpg/pVsADbQSjxeKS1pgr9Uq2Iuf0
+        ZVSkHyJPALkBuI3fZKn4lrxHnOXOeshTey8Igj9ZZI02ArnY7Y3o7BSn9+2Lv8t/r+NaZLKXYqV4ZxHK
+        tMrkxogb5FQQ18sHgFZ6hxyZB1bcz01wmGvRYJ1j7OAFPrts7/8BiTsjXJcAtvEAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
