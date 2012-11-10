@@ -50,4 +50,3 @@ C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.FastColoredTextBox.re
 C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.FindForm.resources
 C:\cheetah chromium\Cheetah\obj\Debug\FastColoredTextBoxNS.ReplaceForm.resources
 C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.UpdaterC.resources
-C:\cheetah chromium\Cheetah\obj\Debug\Cheetah.csprojResolveAssemblyReference.cache
