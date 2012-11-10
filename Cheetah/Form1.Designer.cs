@@ -60,15 +60,17 @@
             this.MenuItem11 = new System.Windows.Forms.MenuItem();
             this.MenuItem12 = new System.Windows.Forms.MenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.faviconpct = new System.Windows.Forms.PictureBox();
             this.status = new System.Windows.Forms.Label();
             this.BookmarksBar = new System.Windows.Forms.ToolStrip();
-            this.metroButtons1 = new Cheetah.MetroToolkit.MetroButtons();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pctimage = new System.Windows.Forms.PictureBox();
-            this.txturl = new Cheetah.WaterMarkTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroButtons1 = new Cheetah.MetroToolkit.MetroButtons();
+            this.txturl = new Cheetah.WaterMarkTextBox();
             this.TabC = new QAdvancedTabControlSample.QTabControlEx();
             this.btnminimize = new System.Windows.Forms.PictureBox();
             this.btnclose = new System.Windows.Forms.PictureBox();
@@ -78,10 +80,12 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.button1 = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.faviconpct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctimage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabC)).BeginInit();
             this.TabC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).BeginInit();
@@ -279,6 +283,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.faviconpct);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.status);
             this.panel1.Controls.Add(this.BookmarksBar);
             this.panel1.Controls.Add(this.metroButtons1);
@@ -292,6 +298,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 63);
             this.panel1.TabIndex = 4;
+            // 
+            // faviconpct
+            // 
+            this.faviconpct.BackColor = System.Drawing.Color.Transparent;
+            this.faviconpct.Image = global::Cheetah.Properties.Resources.loading;
+            this.faviconpct.Location = new System.Drawing.Point(102, 9);
+            this.faviconpct.Name = "faviconpct";
+            this.faviconpct.Size = new System.Drawing.Size(21, 21);
+            this.faviconpct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.faviconpct.TabIndex = 87;
+            this.faviconpct.TabStop = false;
             // 
             // status
             // 
@@ -323,23 +340,11 @@
             this.BookmarksBar.Size = new System.Drawing.Size(784, 25);
             this.BookmarksBar.TabIndex = 85;
             // 
-            // metroButtons1
-            // 
-            this.metroButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButtons1.BackColor = System.Drawing.Color.Transparent;
-            this.metroButtons1.ButtonText = "MENU";
-            this.metroButtons1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.metroButtons1.ForceUppercase = true;
-            this.metroButtons1.ForeColor = System.Drawing.Color.Black;
-            this.metroButtons1.Location = new System.Drawing.Point(702, 6);
-            this.metroButtons1.Name = "metroButtons1";
-            this.metroButtons1.Size = new System.Drawing.Size(73, 27);
-            this.metroButtons1.TabIndex = 5;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(667, 7);
             this.pictureBox5.Name = "pictureBox5";
@@ -363,25 +368,6 @@
             this.pctimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctimage.TabIndex = 81;
             this.pctimage.TabStop = false;
-            // 
-            // txturl
-            // 
-            this.txturl.AllowDrop = true;
-            this.txturl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txturl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txturl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txturl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txturl.Font = new System.Drawing.Font("Gill Sans MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txturl.Location = new System.Drawing.Point(98, 10);
-            this.txturl.Name = "txturl";
-            this.txturl.Size = new System.Drawing.Size(567, 19);
-            this.txturl.TabIndex = 82;
-            this.txturl.WaterMarkColor = System.Drawing.Color.Gray;
-            this.txturl.WaterMarkText = "Enter websites or search term and press enter...";
-            this.txturl.DragDrop += new System.Windows.Forms.DragEventHandler(this.txturl_DragDrop);
-            this.txturl.DragEnter += new System.Windows.Forms.DragEventHandler(this.txturl_DragEnter);
-            this.txturl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txturl_KeyDown);
             // 
             // pictureBox3
             // 
@@ -416,6 +402,49 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(619, 27);
             this.textBox2.TabIndex = 83;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 88;
+            this.pictureBox1.TabStop = false;
+            // 
+            // metroButtons1
+            // 
+            this.metroButtons1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButtons1.BackColor = System.Drawing.Color.Transparent;
+            this.metroButtons1.ButtonText = "MENU";
+            this.metroButtons1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.metroButtons1.ForceUppercase = true;
+            this.metroButtons1.ForeColor = System.Drawing.Color.Black;
+            this.metroButtons1.Location = new System.Drawing.Point(702, 6);
+            this.metroButtons1.Name = "metroButtons1";
+            this.metroButtons1.Size = new System.Drawing.Size(73, 27);
+            this.metroButtons1.TabIndex = 5;
+            // 
+            // txturl
+            // 
+            this.txturl.AllowDrop = true;
+            this.txturl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txturl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txturl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txturl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txturl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.txturl.Location = new System.Drawing.Point(126, 9);
+            this.txturl.Name = "txturl";
+            this.txturl.Size = new System.Drawing.Size(542, 22);
+            this.txturl.TabIndex = 82;
+            this.txturl.WaterMarkColor = System.Drawing.Color.Gray;
+            this.txturl.WaterMarkText = "Enter websites or search term and press enter...";
+            this.txturl.DragDrop += new System.Windows.Forms.DragEventHandler(this.txturl_DragDrop);
+            this.txturl.DragEnter += new System.Windows.Forms.DragEventHandler(this.txturl_DragEnter);
+            this.txturl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txturl_KeyDown);
             // 
             // TabC
             // 
@@ -596,10 +625,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.faviconpct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctimage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabC)).EndInit();
             this.TabC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnminimize)).EndInit();
@@ -663,6 +694,8 @@
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton button1;
+        internal System.Windows.Forms.PictureBox faviconpct;
+        internal System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

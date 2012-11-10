@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using ChromiumEngine;
 using ChromiumEngine.WindowsForms;
 using Qios.DevSuite.Components;
+using ChromiumEngine.WindowsForms.EventArgs;
 
 namespace Cheetah
 {
@@ -1292,6 +1293,8 @@ namespace Cheetah
             OnTabChangedTriggered();
             DoOverflow();
             AddEvents(view);
+            FaviconCollection.Add(view, Properties.Resources.favicons);
+            view.Disposed += delegate(object sender, EventArgs e) { FaviconCollection.Remove((WebDisplay)sender); };
             //AddContextMenus(view);
            btnaddtab.Left = tbp.TabButton.Left + tbp.TabButton.Width - 5;
         }
@@ -1299,12 +1302,36 @@ namespace Cheetah
         internal void AddEvents(WebDisplay dis)
         {
             dis.DocumentComplete += dis_DocumentComplete;
-            dis.DocumentTitleChanged += dis_DocumentTitleChanged;
             dis.BeginFrameLoading += dis_BeginDocumentLoading;
             dis.StatusChanged += dis_StatusChanged;
+            dis.DocumentTitleChanged += delegate(WebDisplay sender, DocumentTitleChangedEventArgs e) { sender.Parent.Text = e.Title; };
+            dis.BeginFrameLoading += dis_BeginFrameLoading;
+            dis.FrameComplete +=dis_FrameComplete;
             dis.NewWindowRequested += dis_NewWindowRequested;
             dis.AddressChanged += dis_AddressChanged;
             dis.ShowJSDialog += dis_ShowJSDialog;
+        }
+        internal Dictionary<WebDisplay, Image> FaviconCollection = new Dictionary<WebDisplay, Image>();
+        private void dis_FrameComplete(WebDisplay sender, FrameCompleteEventArgs e)
+        {
+            if (sender.Equals(Browser))
+            {
+                dis_StatusChanged(sender, new StatusMessageEventArgs(string.Empty, ChromiumEngine.Enum.StatusMessageType.Text));
+                pictureBox5.Image = Properties.Resources.Refresh;
+                faviconpct.Image = FaviconCollection[sender];
+            }
+        }
+
+        void dis_BeginFrameLoading(WebDisplay sender, BeginFrameLoadingEventArgs e)
+        {
+            if (sender.Equals(Browser))
+            {
+                dis_StatusChanged(sender, new StatusMessageEventArgs("Loading " + e.Frame.Url, ChromiumEngine.Enum.StatusMessageType.Text));
+                pictureBox5.Image = Properties.Resources.stop;
+                faviconpct.Image = Properties.Resources.loading;
+                ImageAnimator.Animate(faviconpct.Image, delegate { faviconpct.Invalidate(); });
+                    
+            }
         }
 
         void dis_AddressChanged(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.AddresseChangedEventArgs e)
@@ -1319,12 +1346,33 @@ namespace Cheetah
 
         void dis_BeginDocumentLoading(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.BeginFrameLoadingEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (sender.Equals(Browser))
+                {
+                    //faviconpct.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox5.Image = Properties.Resources.stop;
-            }
-            catch { }
+                    faviconpct.Image = Properties.Resources.loading;
+                    FaviconCollection[sender] = Properties.Resources.favicons;
+                    ImageAnimator.Animate(faviconpct.Image, delegate { faviconpct.Invalidate(); });
+                    
+                }
+                BackgroundWorker bcw = new BackgroundWorker() { WorkerSupportsCancellation = true };
+                    bcw.DoWork += delegate
+                    {
+                        Image favicon = sender.GetFaviconImageFromDocument();
+                        (sender.Parent as QTabPage).Icon = Icon.FromHandle(((Bitmap)favicon).GetHicon());
+                        if (sender.Equals(Browser))
+                        {
+                            FaviconCollection[sender] = favicon;
+                            faviconpct.Image = favicon;
+                        }
+                        History.Add(sender.DocumentTitle, sender.Url, DateTime.Now, Bookmarking.ImageToBase64(favicon, System.Drawing.Imaging.ImageFormat.Icon));
+                        bcw.Dispose();
+                    };
+                    bcw.RunWorkerAsync();
+            //}
+            //catch { }
         }
 
         void dis_ShowJSDialog(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.ShowJSDialogEventArgs e)
@@ -1339,6 +1387,7 @@ namespace Cheetah
                     break;
                 case ChromiumEngine.Enum.JSDialogType.Prompt:
                     e.PromptInputText = Microsoft.VisualBasic.Interaction.InputBox(e.Message, "The page requests the following:", e.DefaultPromptInputText);
+                    e.Result = true;
                     break;
             }
             e.Handled = true;
@@ -1364,14 +1413,6 @@ namespace Cheetah
             catch { }
         }
 
-        void dis_DocumentTitleChanged(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.DocumentTitleChangedEventArgs e)
-        {
-            try
-            {
-                (Browser.Parent as QTabPage).Text = e.Title;
-            }
-            catch { }
-        }
 
         void dis_DocumentComplete(WebDisplay sender, ChromiumEngine.WindowsForms.EventArgs.UrlEventArgs e)
         {
@@ -1379,9 +1420,18 @@ namespace Cheetah
             {
                 if (sender.Equals(Browser))
                     pictureBox5.Image = Properties.Resources.Refresh;
-                textBox2.Text = e.Url;
-                //History.Add(sender.DocumentTitle, sender.Url, DateTime.Now, Bookmarking.ImageToBase64(sender.GetFaviconFromDocument().ToBitmap(), System.Drawing.Imaging.ImageFormat.Icon));
-            }
+                txturl.Text = e.Url;
+                if (e.Url.StartsWith("https://"))
+                {
+                    txturl.BackColor = Color.LightGreen;
+                    textBox2.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    txturl.BackColor = Color.White;
+                    textBox2.BackColor = Color.White;
+                }
+             }
             catch { }
         }
         internal void OnTabChangedTriggered()
@@ -1664,6 +1714,17 @@ namespace Cheetah
                 else
                     pictureBox5.Image = Properties.Resources.stop;
                 txturl.Text = Browser.Url;
+                if (Browser.Url.StartsWith("https://"))
+                {
+                    txturl.BackColor = Color.LightGreen;
+                    textBox2.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    txturl.BackColor = Color.White;
+                    textBox2.BackColor = Color.White;
+                }
+                faviconpct.Image = FaviconCollection[Browser];
             }
             catch { }
         }
